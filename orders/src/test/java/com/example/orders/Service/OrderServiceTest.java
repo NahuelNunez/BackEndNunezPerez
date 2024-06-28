@@ -35,7 +35,7 @@ public class OrderServiceTest {
         MockitoAnnotations.openMocks(this);
     }
 
-    /*****************TEST PARA OBTENER ORDENES*****************/
+
     @Test
     public void testGetOrders() {
         Orders order = new Orders(1L, 12L, 10.0, 5L, 1000.0, LocalDate.now(), "true");
@@ -49,7 +49,7 @@ public class OrderServiceTest {
         assertEquals(12L, result.get(0).getProductId());
     }
 
-    /*****************TEST PARA ELIMINAR ORDEN*****************/
+
     @Test
     public void testDeleteOrder() {
         Long orderId = 1L;
@@ -66,7 +66,7 @@ public class OrderServiceTest {
         verify(ordersRepository, times(1)).deleteById(orderId);
     }
 
-    /*****************TEST PARA CREAR ORDEN*****************/
+
     @Test
     public void testNewOrder() {
         Orders order = new Orders(1L, 1L, 10.0, 5L, 1000.0, LocalDate.now(), "true");
@@ -81,7 +81,7 @@ public class OrderServiceTest {
         verify(ordersRepository, times(1)).save(order);
     }
 
-    /*****************TEST PARA ACTUALIZAR ORDEN*****************/
+
     @Test
     public void testUpdateOrder() {
         Long orderId = 1L;
